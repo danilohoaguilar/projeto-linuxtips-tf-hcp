@@ -1,14 +1,8 @@
-output "instance_priv_ip" {
-  description = "IP privado da maquina virtual"
-  value       = module.terraform-linuxtips-module.private_ips
+# output "instance_priv_ip" {
+#   description = "IP privado da maquina virtual"
+#   value       = module.terraform-linuxtips-module.private_ips
+# }
+
+output "ip_adresseses" {
+  value = "${module.terraform-linuxtips-module.name-web}: ${module.terraform-linuxtips-module.instance_priv_ip-web}/${module.terraform-linuxtips-module.instance_pub_ip-web}"
 }
-
-# output "instance_pub_ip" {
-#   description = "IP publico da maquina virtual"
-#   value = module.ambiente_dev.instance_pub_ip
-# }
-
-
-# output "ip_adresseses" {
-#   value = "${module.ambiente_dev.name-web}: ${module.ambiente_dev.instance_priv_ip-web}/${module.ambiente_dev.instance_pub_ip-web}"
-# }
